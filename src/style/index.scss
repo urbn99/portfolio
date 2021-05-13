@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import './consts.scss';
+@import './utilities.scss';
+@import './media.scss';
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+body{
+    
+    font-weight: 300;
+    font-size: $font-size-s;
+    //width: 100vw;
+    height: 100vh;
+    background: rgb(107,0,163);
+    background: radial-gradient(circle, rgba(107,0,163,1) 0%, rgba(37,0,96,1) 100%);
+    color: $color-1;
+    
+}
+
+
+/*Nav*/
+nav{
+    border-bottom: 1px solid $color-1;
+    
+    .nav-center{
+        .nav-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            .logo{
+                
+                font-weight: 400;
+                font-size: $font-size-m;   
+            }
+            .nav-toggle{
+                font-size: $font-size-m;
+                color: $color-1;
+                background: transparent;
+                border-color: transparent;
+                transition: $transition-1;
+                cursor: pointer;
+
+                &:hover{
+                    transform: rotate(90deg);    
+                }
+            }    
+        }
+        .links-container{
+            height: 0;
+            overflow: hidden;
+            transition: $transition-1;
+            text-align: center;
+            .links{
+                a{
+                    color: $color-1;
+                    font-size: $font-size-s;
+                    text-transform: capitalize;
+                    display: block;
+                    padding: 0.5rem 1rem;
+                    transition: $transition-1;
+                    border-radius: 10px;
+                    &:hover{
+                        
+                        background: $color-1;
+                        color: $color-2;
+                        
+                    }    
+                }
+            }    
+        }    
+    }
+}
+
+
+/*container*/
+.container{
+    @include flex();
+    flex-direction: column;
+    max-width: 1170px;
+    width: 100%;
+    background-color: $color-4;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: $color-3;
+    box-shadow: 0px 7px  $color-5;
+
+    .title{
+        margin: 10px;
+        padding: 10px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #333
+    }
+    .about-components{
+        @include flex();
+        width: 100%;
+        font-size: $font-size-m;
+
+        .about-text{
+            width: 50%;
+           
+            text-align: justify;
+        }
+        .about-image{
+            width: 40%;
+        }
+    }
+    
+}
+
+/*web-card*/
+.web-card{
+    margin: 20px;
+    width: 90%;
+    background-color: rgb(163, 163, 163);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    .web-card-title{
+        font-size: $font-size-l;
+        text-transform: uppercase;
+    }
+    .web-card-image{
+        max-width: 80%;
+    }
+    .web-card-button-container{
+
+        .web-card-button{
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: $font-size-s;
+        text-transform: uppercase;
+        outline: none;
+        background-color: white;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        
+        
+    }
+    
+
+}
+
+/*---Umiejętności---*/
+.skills-container{
+    margin: 20px;
+    width: 100%;
+    background-color: rgb(163, 163, 163);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    
+
+    
+
+}
+/*skill*/
+.skill{
+    width: 200px;
+    height: 250px;
+    background-color: $color-4;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-self: center;
+    
+    
+}
